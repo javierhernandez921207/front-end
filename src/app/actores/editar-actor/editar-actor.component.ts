@@ -1,21 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { actorCreacionDTO, actorDTO } from '../actores';
 
 @Component({
   selector: 'app-editar-actor',
   templateUrl: './editar-actor.component.html',
   styleUrls: ['./editar-actor.component.css']
 })
-export class EditarActorComponent implements OnInit{
+export class EditarActorComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute){
+  modelo: actorDTO = { nombre: 'Javier', fechaNacimiento: new Date("12/07/1992"), foto: 'data:image/png;base64,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' };
+  constructor(private activatedRoute: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe( params => {
+    this.activatedRoute.params.subscribe(params => {
       console.log(params['id']);
     });
+  }
+
+  guardarCambios(actor: actorCreacionDTO) {
+    console.log(actor)
   }
 
 }

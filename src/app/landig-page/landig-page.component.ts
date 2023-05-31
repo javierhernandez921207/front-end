@@ -6,8 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landig-page.component.css']
 })
 export class LandigPageComponent implements OnInit {
-  peliculasEnCine: { titulo: string; fecha: Date; precio: number; poster: string }[] | undefined;
-  peliculasEstreno: { titulo: string; fecha: Date; precio: number; poster: string }[] | undefined;
+  peliculasEnCine!: {
+    titulo: string;
+    fecha: Date;
+    precio: number;
+    poster: string,
+    enCines: boolean,
+    proximosEstrenos: boolean,
+    generos: Array<number>
+  }[];
+
+  peliculasEstreno!: {
+    titulo: string;
+    fecha: Date;
+    precio: number;
+    poster: string,
+    enCines: boolean,
+    proximosEstrenos: boolean,
+    generos: Array<number>
+  }[];
 
   ngOnInit(): void {
 
@@ -16,26 +33,39 @@ export class LandigPageComponent implements OnInit {
         titulo: "Spider-Man",
         fecha: new Date(),
         precio: 1400.99,
-        poster: ""
+        poster: "",
+        enCines: false,
+        proximosEstrenos: false,
+        generos: [1,2]
       },
       {
         titulo: "Moana",
         fecha: new Date(),
-        precio: 500.99,
-        poster: ""
+        precio: 1400.99,
+        poster: "",
+        enCines: false,
+        proximosEstrenos: false,
+        generos: [2]
       },
       {
         titulo: "Titanic",
         fecha: new Date(),
-        precio: 300.99,
-        poster: ""
+        precio: 1400.99,
+        poster: "",
+        enCines: false,
+        proximosEstrenos: false,
+        generos: [1,3]
       }];
+
     this.peliculasEstreno = [
       {
-        titulo: "Titanic",
+        titulo: "Spider-Man",
         fecha: new Date(),
-        precio: 300.99,
-        poster: ""
+        precio: 1400.99,
+        poster: "",
+        enCines: false,
+        proximosEstrenos: false,
+        generos: [3]
       }];
   }
 }

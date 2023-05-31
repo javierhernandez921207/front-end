@@ -1,22 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { generoCreacionDTO } from '../genero';
 
 @Component({
   selector: 'app-crear-genero',
   templateUrl: './crear-genero.component.html',
   styleUrls: ['./crear-genero.component.css']
 })
-export class CrearGeneroComponent implements OnInit{
-  constructor(private router: Router){
-
-  }
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+export class CrearGeneroComponent {
   
-  guardarCambios(): void{
-    // guardar los cambios
+  constructor(private router: Router) {}  
+
+  guardarCambios(genero: generoCreacionDTO): void {    
+    console.log(genero);
     this.router.navigate(['/generos']);
   }
+ 
 }

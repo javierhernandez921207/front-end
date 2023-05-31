@@ -7,7 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListadoPeliculasComponent implements OnInit {
 
-  @Input() peliculas: { titulo: string; fecha: Date; precio: number; poster: string}[] | undefined;
+  @Input() peliculas: { 
+    titulo: string; 
+    fecha: Date; 
+    precio: number; 
+    poster: string, 
+    enCines: boolean, 
+    proximosEstrenos: boolean, 
+    generos: Array<number>}[] | undefined;
 
   ngOnInit(): void {
 
