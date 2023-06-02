@@ -1,0 +1,6 @@
+<form [formGroup]="form">
+    <div class="NgxEditor__Wrapper content-editor">
+        <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+        <ngx-editor [editor]="editor" formControlName="editorContent" [(ngModel)]="html" (ngModelChange)="onChange()"> </ngx-editor>
+    </div>
+</form>
