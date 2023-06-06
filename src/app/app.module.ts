@@ -28,6 +28,9 @@ import { FormularioActoresComponent } from './actores/formulario-actores/formula
 import { InputImgComponent } from './utiles/input-img/input-img.component';
 import { InputEditorComponent } from './utiles/input-editor/input-editor.component';
 import { NgxEditorModule } from 'ngx-editor';
+import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapaComponent } from './utiles/mapa/mapa.component'
 
 @NgModule({
   declarations: [
@@ -52,7 +55,9 @@ import { NgxEditorModule } from 'ngx-editor';
     FiltroPeliculasComponent,
     FormularioActoresComponent,
     InputImgComponent,
-    InputEditorComponent
+    InputEditorComponent,
+    FormularioCineComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +65,7 @@ import { NgxEditorModule } from 'ngx-editor';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    LeafletModule,
     NgxEditorModule.forRoot({
       locals: {
         // menu

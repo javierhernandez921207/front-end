@@ -1,5 +1,5 @@
 .content-editor{
-    height: 300px;
+    min-height: 300px;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }

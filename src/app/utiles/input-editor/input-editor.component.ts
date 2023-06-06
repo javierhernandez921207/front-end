@@ -1,13 +1,15 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 import { Validators, Editor, Toolbar } from 'ngx-editor';
 
 @Component({
   selector: 'app-input-editor',
   templateUrl: './input-editor.component.html',
-  styleUrls: ['./input-editor.component.css']
+  styleUrls: ['./input-editor.component.css'],
 })
 export class InputEditorComponent implements OnInit, OnDestroy {
+
+  @Output() htmlFinal: EventEmitter<string> = new EventEmitter<string>();
   editor!: Editor;
   toolbar: Toolbar = [
     ['bold', 'italic'],
@@ -30,6 +32,6 @@ export class InputEditorComponent implements OnInit, OnDestroy {
     this.editor?.destroy();
   }
   onChange() {
-    console.log(this.html);
+    this.htmlFinal.emit(this.html);
   }
 }

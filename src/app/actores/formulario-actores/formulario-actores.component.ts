@@ -31,6 +31,10 @@ export class FormularioActoresComponent implements OnInit {
   archivoSeleccionado(file: File) {
     this.form.get('foto')?.setValue(file);
   }
+
+  updateHTML(html: string){
+    console.log(html);
+  }
 }
 
 
